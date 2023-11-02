@@ -1,0 +1,93 @@
+/* Book appointment of patient panel(adminpanel.php) */
+.hcontent {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  /* Form header */
+  .hcontent h4 {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+  }
+
+  /* Form inputs */
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  /* Select dropdowns */
+  select.form-control {
+    height: 38px;
+  }
+
+  /* Submit button */
+  /* .btn {
+    text-align: center;
+  } */
+  /* Appointment history table */
+  .app-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .app-table th,
+  .app-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .app-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+
+  .app-table tr:hover {
+    background-color: #f5f5f5;
+  }
+
+  .btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+
+/* doctorpannel navbar ko search btn */
+.doc-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Adds space between "welcome" and form */
+}
+
+.psearch {
+  display: flex;
+  align-items: center;
+}
+
+.email-field {
+  margin-right: 10px; /* Adjust the spacing between the search box and button as needed */
+}
+
+

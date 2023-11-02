@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.sidebar.expanded {
+  width: 250px; /* Adjust the width as needed */
+}
+
+.sidebar{
+  position: fixed;
+  height: 100%;
+  width: 240px;
+  background: #0A2558;
+  transition: all 0.5s ease;
+}
+.sidebar.active{
+  width: 60px;
+}
+.sidebar .logo-details{
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.sidebar .logo-details i{
+  font-size: 28px;
+  font-weight: 500;
+  color: white;
+  min-width: 60px;
+  text-align: center
+}
+
+/* .sidebar .logo-details .logo_name{
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+}
+ .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.sidebar .logo-details .logo_name a{
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+}
+.sidebar .nav-links{
+  margin-top: 10px;
+}
+.sidebar .nav-links li{
+  position: relative;
+  list-style: none;
+  height: 50px;
+}
+.sidebar .nav-links li a{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+.sidebar .nav-links li a.active{
+  background: #081D45;
+}
+.sidebar .nav-links li a:hover{
+  background: #081D45;
+}
+.sidebar .nav-links li i{
+  min-width: 60px;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+}
+.sidebar .nav-links li a .links_name{
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.sidebar .nav-links .log_out{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.section-container{
+  position: relative;
+  background: whitesmoke;
+  /* background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)) ,url(banner.png); */
+  min-height: 100vh;
+  width: calc(100% - 240px);
+  left: 240px;
+  transition: all 0.5s ease;
+}
+.sidebar.active ~ .section-container{
+  width: calc(100% - 60px);
+  left: 60px;
+} 
+.section-container nav{
+  height: 80px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: calc(100% - 240px);
+  left: 240px;
+  z-index: 100;
+  padding: 0 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+.sidebar.active ~ .section-container nav{
+  left: 60px;
+  width: calc(100% - 60px);
+}
+.section-container nav .welcome{
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+nav .sidebar-button i{
+  font-size: 35px;
+  margin-right: 10px;
+}
+.section-container .home-content{
+  position: relative;
+  padding-top: 104px;
+}
+.home-content .overview-boxes{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  margin-bottom: 26px;
+}
+.overview-boxes .box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / 4 - 15px);
+  background: #fff;
+  padding: 15px 14px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  
+}
+.right-side {
+  text-align: center;
+}
+.right-side h4{
+  margin-top: 5%;
+}
+
+
+/* Responsive Media Query */
+@media (max-width: 1240px) {
+  .sidebar{
+    width: 60px;
+  }
+  .sidebar.active{
+    width: 220px;
+  }
+  .section-container{
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  .sidebar.active ~ .section-container{
+    /* width: calc(100% - 220px); */
+    overflow: hidden;
+    left: 220px;
+  }
+  .section-container nav{
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  .sidebar.active .section-container nav{
+    width: calc(100% - 220px);
+    left: 220px;
+  }
+}
+@media (max-width: 1150px) {
+  .home-content .sales-boxes{
+    flex-direction: column;
+  }
+  .home-content .sales-boxes .box{
+    width: 100%;
+    overflow-x: scroll;
+    margin-bottom: 30px;
+  }
+  .home-content .sales-boxes .top-sales{
+    margin: 0;
+  }
+}
+@media (max-width: 1000px) {
+  .overview-boxes .box{
+    width: calc(100% / 2 - 15px);
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 700px) {
+  nav .sidebar-button .dashboard,
+  nav .profile-details .admin_name,
+  nav .profile-details i{
+    display: none;
+  }
+  .section-container nav .profile-details{
+    height: 50px;
+    min-width: 40px;
+  }
+  .home-content .sales-boxes .sales-details{
+    width: 560px;
+  }
+}
+@media (max-width: 550px) {
+  .overview-boxes .box{
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .sidebar.active ~ .section-container nav .profile-details{
+    display: none;
+  }
+}
+  @media (max-width: 400px) {
+  .sidebar{
+    width: 0;
+  }
+  .sidebar.active{
+    width: 60px;
+  }
+  .section-container{
+    width: 100%;
+    left: 0;
+  }
+  .sidebar.active ~ .section-container{
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+  .section-container nav{
+    width: 100%;
+    left: 0;
+  }
+  .sidebar.active ~ .section-container nav{
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+}
+/* list doctors table  */
+#list-doc .dsearch {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#list-doc .email-field {
+  width: 50%;
+}
+
+#list-doc .email-field input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+}
+
+#list-doc .submit-btn {
+  margin-left: -1px;
+}
+
+#list-doc .submit-btn input[type="submit"] {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 0 5px 5px 0;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#list-doc .submit-btn input[type="submit"]:hover {
+  background-color: green;
+  color: white;
+  border-color: green;
+}
+
+#list-doc .doctor-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+#list-doc .doctor-table th,
+#list-doc .doctor-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+#list-doc .doctor-table th {
+  background-color: #f2f2f2;
+}
+
+#list-doc .doctor-table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+/*List Patient table */
+#list-pat .psearch {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#list-pat .email-field {
+  width: 50%;
+}
+
+#list-pat .email-field input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+}
+
+#list-pat .submit-btn {
+  margin-left: -1px;
+}
+#list-pat .submit-btn input[type="submit"] {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 0 5px 5px 0;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+#list-pat .submit-btn input[type="submit"]:hover {
+  background-color: green;
+  color: white;
+  border-color: green;
+}
+#list-pat .patient-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+#list-pat .patient-table th,
+#list-pat .patient-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+#list-pat .patient-table th {
+  background-color: #f2f2f2;
+}
+#list-pat .patient-table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+/*List Appointment table */
+#list-app .appsearch {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#list-app .email-field {
+  width: 50%;
+}
+
+#list-app .email-field input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+}
+
+#list-app .submit-btn {
+  margin-left: -1px;
+}
+#list-app .submit-btn input[type="submit"] {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 0 5px 5px 0;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+#list-app .submit-btn input[type="submit"]:hover {
+  background-color: green;
+  color: white;
+  border-color: green;
+}
+#list-app .app-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+#list-app .app-table th,
+#list-app .app-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+#list-app .app-table th {
+  background-color: #f2f2f2;
+}
+#list-app .app-table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+/* List prescription table */
+#list-pres .pres-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+#list-pres .pres-table th,
+#list-pres .pres-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+#list-pres .pres-table th {
+  background-color: #f2f2f2;
+}
+#list-pres .pres-table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+/* Add doctor form */
+.home-content#list-settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.form-container {
+  margin-top: 50px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.form-group1 {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+select {
+  appearance: none;
+  background-color: white;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M4.89 5.89L0 0h9.78L4.89 5.89zM9.78 0H0L4.89 5.89h4.89V0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px 6px;
+  padding-right: 30px;
+}
+
+.btn-primary {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 0 5px 5px 0;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: green;
+  color: white;
+  border-color: green;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.success-message {
+  color: greenyellow;
+  margin-top: 5px;
+  font-size: 14px;
+}
+/* delete doctor */
+#list-settings1 .email-field {
+  width: 50%;
+}
+
+#list-settings1 .email-field input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+}
+
+#list-settings1 .submit-btn {
+  margin-left: -1px;
+}
+#list-settings1 .submit-btn input[type="submit"] {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 0 5px 5px 0;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+#list-settings1 .submit-btn input[type="submit"]:hover {
+  background-color: green;
+  color: white;
+  border-color: green;
+}
+/* Queries search button and then table */
+#list-mes .qtable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+#list-mes .qtable th,
+#list-mes .qtable td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+#list-mes .qtable th {
+  background-color: #f2f2f2;
+}
+#list-mes .qtable tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+
+
