@@ -1,12 +1,12 @@
-CREATE TABLE `admintb` (
+CREATE TABLE `admin` (
   `username` varchar(50) NOT NULL,
   `password` varchar(30) NOT NULL
 );
 
-INSERT INTO `admintb` (`username`, `password`) VALUES
-('void', 'voidFaceless');
+INSERT INTO `admin` (`username`, `password`) VALUES
+('admin', 'admin');
 
-CREATE TABLE `patreg` (
+CREATE TABLE `patient` (
   `pid` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `fname` varchar(20) NOT NULL,
   `lname` varchar(20) NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE `patreg` (
   `cpassword` varchar(30) NOT NULL
 );
 
-CREATE TABLE `appointmenttb` (
+CREATE TABLE `appointment` (
   `pid` int(11) NOT NULL,
   `AppID` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `fname` varchar(20) NOT NULL,
@@ -31,10 +31,10 @@ CREATE TABLE `appointmenttb` (
   `apptime` time NOT NULL,
   `userStatus` int(5) NOT NULL,
   `doctorStatus` int(5) NOT NULL,
-  FOREIGN KEY (`pid`) REFERENCES `patreg`(`pid`)
+  FOREIGN KEY (`pid`) REFERENCES `patient`(`pid`)
 );
 
-CREATE TABLE `doctb` (
+CREATE TABLE `doctor` (
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE `doctb` (
   `docFees` int(10) NOT NULL
 );
 
-CREATE TABLE `prestb` (
+CREATE TABLE `prescriptiontable` (
   `doctor` varchar(50) NOT NULL,
   `pid` int(11) NOT NULL,
   `AppID` int(11) NOT NULL,
@@ -53,6 +53,6 @@ CREATE TABLE `prestb` (
   `disease` varchar(250) NOT NULL,
   `allergy` varchar(250) NOT NULL,
   `prescription` varchar(1000) NOT NULL,
-  FOREIGN KEY (`pid`) REFERENCES `patreg`(`pid`),
-  FOREIGN KEY (`AppID`) REFERENCES `appointmenttb`(`AppID`)
+  FOREIGN KEY (`pid`) REFERENCES `patient`(`pid`),
+  FOREIGN KEY (`AppID`) REFERENCES `appointment`(`AppID`)
 );

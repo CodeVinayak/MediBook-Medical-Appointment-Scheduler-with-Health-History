@@ -12,7 +12,7 @@ $con=mysqli_connect("localhost","root","","hms");
 if(isset($_POST['search_submit'])){
   $contact=$_POST['contact'];
   $docname = $_SESSION['dname'];
- $query="select * from appointmenttb where contact='$contact' and doctor='$docname';";
+ $query="select * from appointment where contact='$contact' and doctor='$docname';";
  $result=mysqli_query($con,$query);
  echo '<div class="home-content" id="list-app">
  <div>

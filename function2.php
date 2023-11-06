@@ -26,7 +26,7 @@ if (isset($_POST['patsub1'])) {
     }
 
     // Check if the patient with the same email or contact already exists
-    $checkQuery = "SELECT * FROM patreg WHERE email='$email' OR contact='$contact'";
+    $checkQuery = "SELECT * FROM patient WHERE email='$email' OR contact='$contact'";
     $checkResult = mysqli_query($con, $checkQuery);
 
     if (mysqli_num_rows($checkResult) > 0) {
@@ -34,7 +34,7 @@ if (isset($_POST['patsub1'])) {
     }
 
     if (count($errors) === 0) {
-        $query = "INSERT INTO patreg (fname, lname, gender, email, contact, password, cpassword) VALUES ('$fname', '$lname', '$gender', '$email', '$contact', '$password', '$cpassword');";
+        $query = "INSERT INTO patient (fname, lname, gender, email, contact, password, cpassword) VALUES ('$fname', '$lname', '$gender', '$email', '$contact', '$password', '$cpassword');";
         $result = mysqli_query($con, $query);
 
         if ($result) {
@@ -45,7 +45,7 @@ if (isset($_POST['patsub1'])) {
             $_SESSION['contact'] = $contact;
             $_SESSION['email'] = $email;
 
-            $query1 = "SELECT pid FROM patreg WHERE fname='$fname' AND lname='$lname';";
+            $query1 = "SELECT pid FROM patient WHERE fname='$fname' AND lname='$lname';";
             $result1 = mysqli_query($con, $query1);
 
             if ($result1 && mysqli_num_rows($result1) > 0) {

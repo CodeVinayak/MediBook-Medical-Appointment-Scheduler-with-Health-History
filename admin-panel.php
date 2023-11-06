@@ -16,7 +16,7 @@ if (isset($_POST['docsub'])) {
   $docFees = $_POST['docFees'];
 
   // Check if the doctor already exists
-  $checkQuery = "SELECT * FROM doctb WHERE username='$doctor' OR email='$demail'";
+  $checkQuery = "SELECT * FROM doctor WHERE username='$doctor' OR email='$demail'";
   $checkResult = mysqli_query($con, $checkQuery);
 
   if (mysqli_num_rows($checkResult) > 0) {
@@ -25,7 +25,7 @@ if (isset($_POST['docsub'])) {
   }
 
   // Insert the new doctor
-  $query = "INSERT INTO doctb(username, password, email, spec, docFees) VALUES('$doctor', '$dpassword', '$demail', '$spec', '$docFees')";
+  $query = "INSERT INTO doctor(username, password, email, spec, docFees) VALUES('$doctor', '$dpassword', '$demail', '$spec', '$docFees')";
   $result = mysqli_query($con, $query);
 
   if ($result) {
@@ -35,7 +35,7 @@ if (isset($_POST['docsub'])) {
 function isAccepted($id)
 {
     global $con;
-    $query = "SELECT * FROM appointmenttb WHERE AppID = '$id' AND doctorStatus=0";
+    $query = "SELECT * FROM appointment WHERE AppID = '$id' AND doctorStatus=0";
     $result = mysqli_query($con, $query);
     return mysqli_num_rows($result) > 0;
 }
@@ -44,7 +44,7 @@ function isAccepted($id)
 function isCancelled($id)
 {
     global $con;
-    $query = "SELECT * FROM appointmenttb WHERE AppID = '$id' AND userStatus = 0";
+    $query = "SELECT * FROM appointment WHERE AppID = '$id' AND userStatus = 0";
     $result = mysqli_query($con, $query);
     return mysqli_num_rows($result) > 0;
 }
@@ -80,11 +80,11 @@ function isCancelled($id)
 //   }
 
 //   if (count($errors) === 0) {
-//     $query = "select * from doctb where email='$demail';";
+//     $query = "select * from doctor where email='$demail';";
 //     $result = mysqli_query($con, $query);
 
 //     if ($result && mysqli_num_rows($result) > 0) {
-//       $deleteQuery = "delete from doctb where email='$demail';";
+//       $deleteQuery = "delete from doctor where email='$demail';";
 //       $deleteResult = mysqli_query($con, $deleteQuery);
 
 //       if ($deleteResult) {
@@ -342,7 +342,7 @@ mysqli_close($con);
           <?php
           $con = mysqli_connect("localhost", "root", "", "hms");
           global $con;
-          $query = "select * from doctb";
+          $query = "select * from doctor";
           $result = mysqli_query($con, $query);
           while ($row = mysqli_fetch_array($result)) {
             // $username = $row['username'];
@@ -380,7 +380,7 @@ mysqli_close($con);
           </div>
         </form>
       </div>
-      <table class="patient-table">
+      <table class="patient">
         <thead>
           <tr>
             <th scope="col">Patient ID</th>
@@ -397,7 +397,7 @@ mysqli_close($con);
           <?php
           $con = mysqli_connect("localhost", "root", "", "hms");
           global $con;
-          $query = "select * from patreg";
+          $query = "select * from patient";
           $result = mysqli_query($con, $query);
           while ($row = mysqli_fetch_array($result)) {
             $pid = $row['pid'];
@@ -459,7 +459,7 @@ mysqli_close($con);
           $con = mysqli_connect("localhost", "root", "", "hms");
           global $con;
 
-          $query = "select * from appointmenttb;";
+          $query = "select * from appointment;";
           $result = mysqli_query($con, $query);
           while ($row = mysqli_fetch_array($result)) {
             $id = $row['AppID'];
@@ -519,7 +519,7 @@ mysqli_close($con);
             <?php
             $con = mysqli_connect("localhost", "root", "", "hms");
             global $con;
-            $query = "select * from prestb";
+            $query = "select * from prescriptiontable";
             $result = mysqli_query($con, $query);
             while ($row = mysqli_fetch_array($result)) {
               $doctor = $row['doctor'];

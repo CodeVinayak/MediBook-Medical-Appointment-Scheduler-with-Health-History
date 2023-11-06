@@ -11,7 +11,7 @@ include("newfunction.php");
 if(isset($_POST['patient_search_submit']))
 {
 	$contact=$_POST['patient_contact'];
-	$query = "select * from patreg where contact= '$contact'";
+	$query = "select * from patient where contact= '$contact'";
   $result = mysqli_query($con,$query);
   $row=mysqli_fetch_array($result);
   if($row['lname']=="" & $row['email']=="" & $row['contact']=="" & $row['password']==""){
@@ -21,7 +21,7 @@ if(isset($_POST['patient_search_submit']))
   else {
     echo "<div class='home-content' id='list-pat'>
 	<div>
-<table class='patient-table'>
+<table class='patient'>
   <thead>
     <tr>
       <th scope='col'>First Name</th>

@@ -20,7 +20,7 @@ if (isset($_POST['docsub1'])) {
     }
 
     // Prepare and execute the query using prepared statements
-    $query = "SELECT * FROM doctb WHERE username = ? AND password = ?";
+    $query = "SELECT * FROM doctor WHERE username = ? AND password = ?";
     $stmt = mysqli_prepare($con, $query);
     mysqli_stmt_bind_param($stmt, "ss", $dname, $dpass);
     mysqli_stmt_execute($stmt);
@@ -38,7 +38,8 @@ if (isset($_POST['docsub1'])) {
     }
 
     // Close the statement and database connection
-    mysqli_stmt_close($stmt);
-    mysqli_close($con);
+    mysqlite_stmt_close($stmt);
+    mysqlite_close($con);
+    
 }
 ?>

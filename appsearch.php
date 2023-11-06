@@ -12,7 +12,7 @@ include("newfunction.php");
 if(isset($_POST['app_search_submit']))
 {
 	$contact=$_POST['app_contact'];
-	$query = "select * from appointmenttb where contact= '$contact';";
+	$query = "select * from appointment where contact= '$contact';";
   $result = mysqli_query($con,$query);
   $row=mysqli_fetch_array($result);
   if($row['fname']=="" & $row['lname']=="" & $row['email']=="" & $row['contact']=="" & $row['doctor']=="" & $row['docFees']=="" & $row['appdate']=="" & $row['apptime']==""){

@@ -34,7 +34,7 @@
           <div class="two-forms">
             <div class="input-box">
               <input type="text" name="email" class="form-control" placeholder="Enter email ID" />
-            </div>
+            </div><br>
             <div class="input-box">
               <input type="password" class="form-control" name="password2" placeholder="Enter password" />
             </div>

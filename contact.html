@@ -70,14 +70,14 @@ $doctor = $_SESSION['dname'];
 function isPrescribed($id)
 {
     global $con;
-    $query = "SELECT * FROM prestb WHERE AppID = '$id'";
+    $query = "SELECT * FROM prescriptiontable WHERE AppID = '$id'";
     $result = mysqli_query($con, $query);
     return mysqli_num_rows($result) > 0;
 }
 function isAccepted($id)
 {
     global $con;
-    $query = "SELECT * FROM appointmenttb WHERE AppID = '$id' AND doctorStatus=0";
+    $query = "SELECT * FROM appointment WHERE AppID = '$id' AND doctorStatus=0";
     $result = mysqli_query($con, $query);
     return mysqli_num_rows($result) > 0;
 }
@@ -86,13 +86,13 @@ function isAccepted($id)
 function isCancelled($id)
 {
     global $con;
-    $query = "SELECT * FROM appointmenttb WHERE AppID = '$id' AND userStatus = 0";
+    $query = "SELECT * FROM appointment WHERE AppID = '$id' AND userStatus = 0";
     $result = mysqli_query($con, $query);
     return mysqli_num_rows($result) > 0;
 }
 if(isset($_GET['accept'])){
     $AppID=$_GET['AppID'];
-    $sql= mysqli_query($con,"UPDATE appointmenttb SET doctorStatus= 0 WHERE AppID = '$AppID'");
+    $sql= mysqli_query($con,"UPDATE appointment SET doctorStatus= 0 WHERE AppID = '$AppID'");
     if($sql){
         echo "<script>alert('Your appointment was successfully accepted.');</script>";
     }
@@ -100,14 +100,14 @@ if(isset($_GET['accept'])){
 
 if (isset($_GET['cancel'])) {
     $AppID = $_GET['AppID'];
-    $query = mysqli_query($con, "UPDATE appointmenttb SET userStatus = 0 WHERE AppID = '$AppID'");
+    $query = mysqli_query($con, "UPDATE appointment SET userStatus = 0 WHERE AppID = '$AppID'");
     if ($query) {
         echo "<script>alert('Your appointment was successfully cancelled.');</script>";
     }
 }
 // if (isset($_GET['accept'])) {
 //     $AppID = $_GET['AppID'];
-//     $query = mysqli_query($con, "UPDATE appointmenttb SET userStatus= 1 WHERE AppID = '$AppID'");
+//     $query = mysqli_query($con, "UPDATE appointment SET userStatus= 1 WHERE AppID = '$AppID'");
 //     if ($query) {
 //         echo "<script>alert('Your appointment was successfully Accepted.');</script>";
 //     }
@@ -120,7 +120,7 @@ if (isset($_GET['prescribe'])) {
     $disease = $_GET['disease'];
     $allergy = $_GET['allergy'];
     $prescription = $_GET['prescription'];
-    $query = mysqli_query($con, "INSERT INTO prestb(doctor, AppID, appdate, apptime, disease, allergy, prescription) VALUES ('$doctor', '$AppID', '$appdate', '$apptime', '$disease', '$allergy', '$prescription');");
+    $query = mysqli_query($con, "INSERT INTO prescriptiontable(doctor, AppID, appdate, apptime, disease, allergy, prescription) VALUES ('$doctor', '$AppID', '$appdate', '$apptime', '$disease', '$allergy', '$prescription');");
     if ($query) {
         echo "<script>alert('Prescribed successfully!');</script>";
     } else {
@@ -268,7 +268,7 @@ if (isset($_GET['prescribe'])) {
                     $con = mysqli_connect("localhost", "root", "", "hms");
                     global $con;
                     $dname = $_SESSION['dname'];
-                    $query = "SELECT pid, AppID, fname, lname, gender, email, contact, appdate, apptime, userStatus, doctorStatus FROM appointmenttb WHERE doctor = '$dname';";
+                    $query = "SELECT pid, AppID, fname, lname, gender, email, contact, appdate, apptime, userStatus, doctorStatus FROM appointment WHERE doctor = '$dname';";
                     $result = mysqli_query($con, $query);
                     while ($row = mysqli_fetch_array($result)) {
                         $id = $row['AppID'];
@@ -342,7 +342,7 @@ if (isset($_GET['prescribe'])) {
                     $con = mysqli_connect("localhost", "root", "", "hms");
                     global $con;
 
-                    $query = "SELECT pid, fname, lname, AppID, appdate, apptime, disease, allergy, prescription FROM prestb WHERE doctor = '$doctor';";
+                    $query = "SELECT pid, fname, lname, AppID, appdate, apptime, disease, allergy, prescription FROM prescriptiontable WHERE doctor = '$doctor';";
 
                     $result = mysqli_query($con, $query);
                     if (!$result) {

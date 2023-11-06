@@ -78,7 +78,7 @@ if (isset($_GET['submit'])) {
     $special = $_GET['special'];
     $docFees = $_GET['docFees'];
 
-    $query = "UPDATE doctb SET username='$doctor',password='$password',email='$demail',spec='$special', docFees='$docFees' WHERE email='$demail'";
+    $query = "UPDATE doctor SET username='$doctor',password='$password',email='$demail',spec='$special', docFees='$docFees' WHERE email='$demail'";
     $data = mysqli_query($con, $query);
 
     if ($data) {

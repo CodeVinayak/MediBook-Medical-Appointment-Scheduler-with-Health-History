@@ -41,10 +41,10 @@ if (isset($_POST['app-submit'])) {
   if ($appdate1 < strtotime($oneMonthFromNow)) {
     if (date("Y-m-d", $appdate1) >= $cur_date) {
       if ((date("Y-m-d", $appdate1) == $cur_date and date("H:i:s", $apptime1) > $cur_time) or date("Y-m-d", $appdate1) > $cur_date) {
-        $check_query = mysqli_query($con, "SELECT apptime FROM appointmenttb WHERE doctor='$doctor' AND appdate='$appdate' AND apptime='$apptime' AND (userStatus='1' AND doctorStatus='1')");
+        $check_query = mysqli_query($con, "SELECT apptime FROM appointment WHERE doctor='$doctor' AND appdate='$appdate' AND apptime='$apptime' AND (userStatus='1' AND doctorStatus='1')");
 
         if (mysqli_num_rows($check_query) == 0) {
-          $query = mysqli_query($con, "insert into appointmenttb(pid,fname,lname,gender,email,contact,doctor,docFees,appdate,apptime,userStatus,doctorStatus) values($pid,'$fname','$lname','$gender','$email','$contact','$doctor','$docFees','$appdate','$apptime','1','1')");
+          $query = mysqli_query($con, "insert into appointment(pid,fname,lname,gender,email,contact,doctor,docFees,appdate,apptime,userStatus,doctorStatus) values($pid,'$fname','$lname','$gender','$email','$contact','$doctor','$docFees','$appdate','$apptime','1','1')");
 
           if ($query) {
             echo "<script>alert('Your appointment successfully booked');</script>";
@@ -67,7 +67,7 @@ if (isset($_POST['app-submit'])) {
 
 
 if (isset($_GET['cancel'])) {
-  $query = mysqli_query($con, "update appointmenttb set userStatus='0' where AppID = '" . $_GET['AppID'] . "'");
+  $query = mysqli_query($con, "update appointment set userStatus='0' where AppID = '" . $_GET['AppID'] . "'");
   if ($query) {
     echo "<script>alert('Your appointment successfully cancelled');</script>";
   }
@@ -75,7 +75,7 @@ if (isset($_GET['cancel'])) {
 function get_specs()
 {
   $con = mysqli_connect("localhost", "root", "", "hms");
-  $query = mysqli_query($con, "select username, spec from doctb");
+  $query = mysqli_query($con, "select username, spec from doctor");
   $docarray = array();
   while ($row = mysqli_fetch_assoc($query)) {
     $docarray[] = $row;
@@ -92,7 +92,7 @@ if (isset($_POST['submit'])) {
   $email = $_POST['email'];
   $pwd = $_POST['password'];
 
-  $query = "UPDATE PATREG SET password='$pwd' WHERE email='$email'";
+  $query = "UPDATE patient SET password='$pwd' WHERE email='$email'";
   $data = mysqli_query($con, $query);
   if ($data) {
     echo " <script> alert('password changed')</script>";
@@ -105,7 +105,7 @@ if (isset($_POST['submit'])) {
 function isAccepted($id)
 {
     global $con;
-    $query = "SELECT * FROM appointmenttb WHERE AppID = '$id' AND doctorStatus=0";
+    $query = "SELECT * FROM appointment WHERE AppID = '$id' AND doctorStatus=0";
     $result = mysqli_query($con, $query);
     return mysqli_num_rows($result) > 0;
 }
@@ -114,7 +114,7 @@ function isAccepted($id)
 function isCancelled($id)
 {
   global $con;
-  $query = "SELECT * FROM appointmenttb WHERE AppID = '$id' AND userStatus = 0";
+  $query = "SELECT * FROM appointment WHERE AppID = '$id' AND userStatus = 0";
   $result = mysqli_query($con, $query);
   return mysqli_num_rows($result) > 0;
 }
@@ -372,7 +372,7 @@ function isCancelled($id)
             $con = mysqli_connect("localhost", "root", "", "hms");
             global $con;
 
-            $query = "SELECT AppID, doctor, docFees, appdate, apptime, userStatus, doctorStatus FROM appointmenttb WHERE fname ='$fname' AND lname='$lname';";
+            $query = "SELECT AppID, doctor, docFees, appdate, apptime, userStatus, doctorStatus FROM appointment WHERE fname ='$fname' AND lname='$lname';";
             $result = mysqli_query($con, $query);
             while ($row = mysqli_fetch_array($result)) {
               $doctor = $row['doctor'];
@@ -443,7 +443,7 @@ function isCancelled($id)
             $con = mysqli_connect("localhost", "root", "", "hms");
             global $con;
 
-            $query = "select doctor,AppID,appdate,apptime,disease,allergy,prescription from prestb where pid='$pid';";
+            $query = "select doctor,AppID,appdate,apptime,disease,allergy,prescription from prescriptiontable where pid='$pid';";
 
             $result = mysqli_query($con, $query);
             if (!$result) {

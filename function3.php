@@ -4,7 +4,7 @@ $con = mysqli_connect("localhost", "root", "", "hms");
 if (isset($_POST['adsub'])) {
 	$username = $_POST['username1'];
 	$password = $_POST['password2'];
-	$query = "select * from admintb where username='$username' and password='$password';";
+	$query = "select * from admin where username='$username' and password='$password';";
 	$result = mysqli_query($con, $query);
 	if (mysqli_num_rows($result) == 1) {
 		$_SESSION['username'] = $username;
@@ -18,7 +18,7 @@ if (isset($_POST['adsub'])) {
 // {
 // 	$contact=$_POST['contact'];
 // 	$status=$_POST['status'];
-// 	$query="update appointmenttb set payment='$status' where contact='$contact';";
+// 	$query="update appointment set payment='$status' where contact='$contact';";
 // 	$result=mysqli_query($con,$query);
 // 	if($result)
 // 		header("Location:updated.php");
@@ -28,7 +28,7 @@ if (isset($_POST['adsub'])) {
 function display_docs()
 {
 	global $con;
-	$query = "select * from doctb";
+	$query = "select * from doctor";
 	$result = mysqli_query($con, $query);
 	while ($row = mysqli_fetch_array($result)) {
 		$name = $row['name'];
@@ -39,7 +39,7 @@ function display_docs()
 
 if (isset($_POST['doc_sub'])) {
 	$name = $_POST['name'];
-	$query = "insert into doctb(name)values('$name')";
+	$query = "insert into doctor(name)values('$name')";
 	$result = mysqli_query($con, $query);
 	if ($result)
 		header("Location:adddoc.php");

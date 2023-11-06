@@ -10,7 +10,7 @@ if (isset($_POST['patsub'])) {
         echo "<script>alert('Enter username and password first.');
               window.location.href = 'patient-login';</script>";
     } else {
-        $query = "select * from patreg where email='$email' and password='$password';";
+        $query = "select * from patient where email='$email' and password='$password';";
         $result = mysqli_query($con, $query);
         if (mysqli_num_rows($result) == 1) {
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
@@ -36,7 +36,7 @@ if (isset($_POST['patsub'])) {
 // {
 // 	$contact=$_POST['contact'];
 // 	$status=$_POST['status'];
-// 	$query="update appointmenttb set payment='$status' where contact='$contact';";
+// 	$query="update appointment set payment='$status' where contact='$contact';";
 // 	$result=mysqli_query($con,$query);
 // 	if($result)
 // 		header("Location:updated.php");
@@ -48,7 +48,7 @@ if (isset($_POST['patsub'])) {
 // function display_docs()
 // {
 // 	global $con;
-// 	$query="select * from doctb";
+// 	$query="select * from doctor";
 // 	$result=mysqli_query($con,$query);
 // 	while($row=mysqli_fetch_array($result))
 // 	{
@@ -64,7 +64,7 @@ if (isset($_POST['patsub'])) {
 //   $dpassword=$_POST['dpassword'];
 //   $demail=$_POST['demail'];
 //   $docFees=$_POST['docFees'];
-// 	$query="insert into doctb(username,password,email,docFees)values('$doctor','$dpassword','$demail','$docFees')";
+// 	$query="insert into doctor(username,password,email,docFees)values('$doctor','$dpassword','$demail','$docFees')";
 // 	$result=mysqli_query($con,$query);
 // 	if($result)
 // 		header("Location:adddoc.php");

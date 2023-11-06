@@ -135,7 +135,8 @@ nav .sidebar-button i{
   position: relative;
   padding-top: 110px;
 }
-.home-content .overview-boxes{
+/* Default styles for all screen sizes */
+.home-content .overview-boxes {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -143,6 +144,16 @@ nav .sidebar-button i{
   padding: 0 20px;
   margin-bottom: 26px;
 }
+
+/* Media query for screens with a maximum width of 768px (typical for mobile devices) */
+@media screen and (max-width: 768px) {
+  .home-content .overview-boxes {
+    /* Adjust the styles for mobile devices here */
+    display: grid; /* Change to a grid layout for smaller screens */
+    /* You can specify other styles here, such as align-items and padding, as needed */
+  }
+}
+
 .overview-boxes .box{
   display: flex;
   align-items: center;
@@ -173,6 +184,8 @@ nav .sidebar-button i{
   .section-container{
     width: calc(100% - 60px);
     left: 60px;
+    /* padding-right: 240px; */
+
   }
   .sidebar.active ~ .section-container{
     /* width: calc(100% - 220px); */
@@ -354,21 +367,21 @@ nav .sidebar-button i{
   color: white;
   border-color: green;
 }
-#list-pat .patient-table {
+#list-pat .patient {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
 }
-#list-pat .patient-table th,
-#list-pat .patient-table td {
+#list-pat .patient th,
+#list-pat .patient td {
   padding: 10px;
   text-align: left;
   border: 1px solid #ccc;
 }
-#list-pat .patient-table th {
+#list-pat .patient th {
   background-color: #f2f2f2;
 }
-#list-pat .patient-table tbody tr:hover {
+#list-pat .patient tbody tr:hover {
   background-color: rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
 }

@@ -17,7 +17,7 @@ nav img {
 }
 .btnlogin a{
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 nav a {
@@ -87,7 +87,7 @@ body {
 }
 
 .btn:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background:greenyellow;
 }
 
 #registerBtn {
@@ -100,7 +100,7 @@ body {
 }
 
 .btn.btn.white-btn:hover {
-    background: rgba(255, 255, 255, 0.5);
+    background: greenyellow;
 }
 
 .nav-menu-btn {
@@ -190,7 +190,7 @@ header {
 .btnRegister {
     font-size: 15px;
     font-weight: 500;
-    color: #fff;
+    color: black;
     height: 45px;
     width: 100%;
     border: none;
@@ -204,7 +204,7 @@ header {
 .btnlogin{
     font-size: 15px;
     font-weight: 500;
-    color: #fff;
+    color: black;
     height: 45px;
     width: 100%;
     border: none;
@@ -217,11 +217,11 @@ header {
 }
 
 .btnRegister:hover {
-    background: rgba(255, 255, 255, 0.5);
+    background: greenyellow;
     box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
 }
 .btnlogin:hover {
-    background: rgba(255, 255, 255, 0.5);
+    background: greenyellow;
     box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -230,8 +230,8 @@ header {
     display: flex;
     justify-content: space-between;
     color: #fff;
-    font-size: small;
-    margin-top: 10px;
+    font-size: large;
+    margin-top: 0px;
 }
 
 .two-col .one {
@@ -253,7 +253,7 @@ header {
         display: none;
     }
     .nav-menu.responsive {
-        top: 100px;
+        top: 80px;
     }
     .nav-menu {
         position: absolute;
@@ -262,7 +262,6 @@ header {
         justify-content: center;
         background: rgba(255, 255, 255, 0.2);
         width: 100%;
-        height: 90vh;
         backdrop-filter: blur(20px);
         transition: .3s;
     }
@@ -293,7 +292,7 @@ header {
     }
     .form-box {
         width: 100%;
-        height: 500px;
+        
     }
     .login-container,
     .register-container {

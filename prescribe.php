@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-include('func1.php');
+include('function1.php');
 $con = mysqli_connect("localhost", "root", "", "hms");
 $pid='';
 $AppID='';
@@ -31,7 +31,7 @@ if(isset($_POST['prescribe']) && isset($_POST['pid']) && isset($_POST['AppID']) 
   $AppID = $_POST['AppID'];
   $prescription = $_POST['prescription'];
   
-  $query=mysqli_query($con,"insert into prestb(doctor,pid,AppID,fname,lname,appdate,apptime,disease,allergy,prescription) values ('$doctor','$pid','$AppID','$fname','$lname','$appdate','$apptime','$disease','$allergy','$prescription')");
+  $query=mysqli_query($con,"insert into prescriptiontable(doctor,pid,AppID,fname,lname,appdate,apptime,disease,allergy,prescription) values ('$doctor','$pid','$AppID','$fname','$lname','$appdate','$apptime','$disease','$allergy','$prescription')");
     if($query)
     {
       echo "<script>alert('Prescribed successfully!');window.location.href = 'doctor-panel.php';</script>";
@@ -58,6 +58,7 @@ if(isset($_POST['prescribe']) && isset($_POST['pid']) && isset($_POST['AppID']) 
     body {
       padding-top: 50px;
       font-family: 'IBM Plex Sans', sans-serif;
+      background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
     }
     
     .home-cont {
