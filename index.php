@@ -48,7 +48,7 @@
         <nav class="nav">
             <div class="nav-logo">
                 <a href="index.php"><img src="logo.png" alt="">
-                    <span>Necromancy Hospital</span>
+                    <span>Hospital Appointment Booking</span>
             </div>
             <div class="nav-menu" id="navMenu">
                 <ul>
@@ -59,8 +59,8 @@
             </div>
             <div class="nav-button">
                 <button class="btn white-btn" id="loginBtn" onclick="showForm('loginPatient')">Patient</button>
-                <button class="btn" id="registerBtn" onclick="showForm('loginDoctor')">Doctor</button>
-                <button class="btn" id="adminBtn" onclick="showForm('loginAdmin')">Admin</button>
+                <button class="btn white-btn" id="registerBtn" onclick="showForm('loginDoctor')">Doctor</button>
+                <button class="btn white-btn    " id="adminBtn" onclick="showForm('loginAdmin')">Admin</button>
             </div>
             <div class="nav-menu-btn">
                 <i class="bx bx-menu" onclick="myMenuFunction()"></i>
@@ -68,10 +68,11 @@
         </nav>
 
         <div class="form-box">
-            <div class="top">
-                <header>Register as a patient</header>
-            </div>
+
             <div class="register-container" id="loginPatient">
+                <div class="top">
+                    <header>Register as a patient</header>
+                </div>
                 <form action="function2.php" method="POST" onsubmit="return validateForm()">
                     <div class="two-forms">
                         <div class="input-box">
@@ -125,15 +126,12 @@
                         <input type="submit" class="btnRegister" name="patsub1"
                             onclick="return checklen() && validateForm();" value="Register" />
                     </div><br>
-                    <div class="input-box">
-                        <button  class="btnRegister" onclick="showForm('login'); window.location.href='patient-login.php';">Login as
-                            patient</button>
-                    </div>
-
-
-
 
                 </form>
+                <div class="input-box">
+                    <button class="btnlogin" onclick="window.location.href='patient-login.php';">Login as
+                        patient</button>
+                </div>
             </div>
 
             <!-- Doctor -->

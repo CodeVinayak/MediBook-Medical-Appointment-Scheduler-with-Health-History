@@ -13,45 +13,48 @@
 <body>
   <div class="wrapper">
     <nav class="nav">
-    <div class="nav-logo">
-            <a href="index.php"><img src="logo.png" alt="">
-            <span>Necromancy Hospital</span>
-            </div>
+      <div class="nav-logo">
+        <a href="index.php"><img src="logo.png" alt="">
+          <span>Hospital Appointment Booking</span>
+      </div>
       <div class="nav-menu" id="navMenu">
-                <ul>
-                    <li><a href="index.php" class="link">Home</a></li>
-                    <!-- <li><a href="services.html" class="link">About US</a></li>
+        <ul>
+          <li><a href="index.php" class="link">Home</a></li>
+          <!-- <li><a href="services.html" class="link">About US</a></li>
                     <li><a href="contact.html" class="link">Contact</a></li> -->
-                </ul>
+        </ul>
       </div>
     </nav>
     <div class="form-box">
       <div class="register-container" id="loginPatient">
         <div class="top">
-        <header>Patient Login</header>
+          <header>Patient Login</header>
         </div>
         <form method="POST" action="function.php">
           <div class="two-forms">
+            <div class="input-box">
+              <input type="text" name="email" class="form-control" placeholder="Enter email ID" />
+            </div>
+            <div class="input-box">
+              <input type="password" class="form-control" name="password2" placeholder="Enter password" />
+            </div>
+          </div><br><br>
           <div class="input-box">
-          <input type="text" name="email" class="form-control" placeholder="Enter email ID"/>
-        </div>
-          <div class="input-box">        
-          <input type="password" class="form-control" name="password2" placeholder="Enter password"/>
-        </div>
-          </div>
+            <input type="submit" id="inputbtn" name="patsub" value="Login" class="btnRegister">
+          </div><br>
           <div class="input-box">
-          <input type="submit" id="inputbtn" name="patsub" value="Login" class="btnRegister">
+            <button type="button" class="btnlogin"><a href="index.php">Back</a></button>
           </div>
-          <div class="input-box">
-          <button type="button" class="btnRegister"><a href="index.php">Back</a></button>
-          </div>
+          <!-- <div class="input-box">
+            <button class="btnlogin" onclick="window.location.href='index.php';">Back</button>
+          </div> -->
         </form>
-        
+
       </div>
     </div>
 
 
-</div>
+  </div>
 
 </body>
 

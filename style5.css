@@ -15,6 +15,10 @@ nav img {
     text-decoration: none;
     color: white;
 }
+.btnlogin a{
+    text-decoration: none;
+    color: white;
+}
 
 nav a {
     text-decoration: none;
@@ -34,7 +38,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 110vh;
+    min-height: 100vh;
     background: rgba(39, 39, 39, 0.4);
 }
 
@@ -196,10 +200,30 @@ header {
     transition: .3s ease-in-out;
 }
 
+.btnlogin{
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    
+}
+
 .btnRegister:hover {
     background: rgba(255, 255, 255, 0.5);
     box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
 }
+.btnlogin:hover {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
 
 .two-col {
     display: flex;
