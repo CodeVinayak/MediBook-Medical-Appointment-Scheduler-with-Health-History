@@ -91,7 +91,7 @@
   width: 100%;
 }
 .section-container{
-  position: relative;
+  position: fixed;
   background: whitesmoke;
   /* background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)) ,url(banner.png); */
   min-height: 100vh;

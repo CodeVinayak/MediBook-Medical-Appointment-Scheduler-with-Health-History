@@ -119,7 +119,7 @@ if (isset($_GET['prescribe'])) {
                 </a>
             </li>
             <li class="log_out">
-                <a href="patient-logout.php" onclick="logout()">
+                <a href="logout.php" onclick="logout()">
                     <i class='bx bx-log-out'></i>
                     <span class="links_name">Log out</span>
                 </a>
@@ -351,7 +351,7 @@ if (isset($_GET['prescribe'])) {
         // logout button code
         function logout() {
             event.preventDefault();
-            window.location.href = "patient-logout.php"; // Redirect to patient-logout.php
+            window.location.href = "logout.php"; // Redirect to logout.php
         }
 
         // default page contents js

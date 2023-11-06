@@ -33,7 +33,7 @@ if (isset($_POST['docsub1'])) {
         header("Location: doctor-panel.php");
         exit();
     } else {
-        header("Location: error2.php");
+        header("Location: Doctor-Not-Found.php");
         exit();
     }
 

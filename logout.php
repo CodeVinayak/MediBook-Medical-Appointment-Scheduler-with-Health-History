@@ -5,7 +5,6 @@ session_destroy();
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
@@ -29,7 +28,7 @@ session_destroy();
         text-decoration: none;
         border-radius: 4px;
         border: 2px solid #ccc;
-        transition: color 0.3s;
+        transition: color 0.5s;
       }
 
       .btn:hover {
@@ -39,6 +38,6 @@ session_destroy();
   </head>
   <body>
     <h3>You have logged out.</h3><br><br>
-    <a href="patient-login" class="btn btn-outline-light">Back to Login Page</a>
+    <a href="index.php" class="btn btn-outline-light">Back to Home Page</a>
   </body>
 </html>
