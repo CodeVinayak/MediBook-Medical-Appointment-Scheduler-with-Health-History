@@ -14,7 +14,7 @@
   <div class="wrapper">
     <nav class="nav">
     <div class="nav-logo">
-            <a href="index.php"><img src="lgo.png" alt="">
+            <a href="index.php"><img src="logo.png" alt="">
             <span>Necromancy Hospital</span>
             </div>
       <div class="nav-menu" id="navMenu">

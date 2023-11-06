@@ -34,5 +34,5 @@
   </head>
   <body>
     <h3>Invalid Email-Id or Password!<br>Please try again.</h3><br><br>
-    <a href="index1.php" class="btn btn-outline-light">Try Again</a>
+    <a href="patient-login" class="btn btn-outline-light">Try Again</a>
 </html>

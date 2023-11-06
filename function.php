@@ -8,7 +8,7 @@ if (isset($_POST['patsub'])) {
 
     if (empty($email) || empty($password)) {
         echo "<script>alert('Enter username and password first.');
-              window.location.href = 'index1.php';</script>";
+              window.location.href = 'patient-login';</script>";
     } else {
         $query = "select * from patreg where email='$email' and password='$password';";
         $result = mysqli_query($con, $query);
@@ -25,7 +25,7 @@ if (isset($_POST['patsub'])) {
             header("Location: patient-panel.php");
         } else {
             echo ("<script>alert('Invalid Email or Password. Try Again!');
-                  window.location.href = 'index1.php';</script>");
+                  window.location.href = 'patient-login';</script>");
         }
     }
 }

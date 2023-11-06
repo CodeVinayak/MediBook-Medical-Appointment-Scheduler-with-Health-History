@@ -39,6 +39,6 @@ session_destroy();
   </head>
   <body>
     <h3>You have logged out.</h3><br><br>
-    <a href="index1.php" class="btn btn-outline-light">Back to Login Page</a>
+    <a href="patient-login" class="btn btn-outline-light">Back to Login Page</a>
   </body>
 </html>

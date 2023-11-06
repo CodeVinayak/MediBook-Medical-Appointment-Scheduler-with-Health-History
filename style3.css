@@ -6,8 +6,8 @@
 .header {
     min-height: 100vh;
     width: 100vw;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url('banner.jpg');
     background-position: center;
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
     background-size: cover;
     position: relative;
 }

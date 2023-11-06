@@ -23,7 +23,7 @@ nav a {
 }
 
 body {
-    background: url("banner.jpg");
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -49,13 +49,7 @@ body {
     background: linear-gradient(rgba(39, 39, 39, 0.6), transparent);
     z-index: 100;
 }
-
-/* .nav-logo p {
-    color: white;
-    font-size: 25px;
-    font-weight: 600;
-} */
-
+    
 .nav-menu ul {
     display: flex;
 }

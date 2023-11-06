@@ -8,7 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style5.css">
     <script>
-        var check = function() {
+        var check = function () {
             if (document.getElementById('password').value ==
                 document.getElementById('cpassword').value) {
                 document.getElementById('message').style.color = '#5dd05d';
@@ -23,7 +23,7 @@
             var key = event.keyCode;
             return ((key >= 65 && key <= 90) || key == 8 || key == 32);
         };
-        window.onload = function() {
+        window.onload = function () {
             var formSubmitted = localStorage.getItem('formSubmitted');
             if (formSubmitted === 'true') {
                 var formId = localStorage.getItem('lastSubmittedForm');
@@ -47,7 +47,7 @@
     <div class="wrapper">
         <nav class="nav">
             <div class="nav-logo">
-                <a href="index.php"><img src="lgo.png" alt="">
+                <a href="index.php"><img src="logo.png" alt="">
                     <span>Necromancy Hospital</span>
             </div>
             <div class="nav-menu" id="navMenu">
@@ -68,19 +68,20 @@
         </nav>
 
         <div class="form-box">
+            <div class="top">
+                <header>Register as a patient</header>
+            </div>
             <div class="register-container" id="loginPatient">
-                <div class="top">
-                    <span>Login as patient<a href="index1.php" onclick="showForm('login')">Click here</a></span>
-                    <header>Register as a patient</header>
-                </div>
                 <form action="function2.php" method="POST" onsubmit="return validateForm()">
                     <div class="two-forms">
                         <div class="input-box">
-                            <input type="text" class="form-control" placeholder="First Name *" name="fname" onkeydown="return alphaOnly(event);"/>
+                            <input type="text" class="form-control" placeholder="First Name *" name="fname"
+                                onkeydown="return alphaOnly(event);" />
                             <i class="bx bx-user"></i>
                         </div>
                         <div class="input-box">
-                            <input type="text" class="form-control" placeholder="Lastname *" name="lname" onkeydown="return alphaOnly(event);"/>
+                            <input type="text" class="form-control" placeholder="Lastname *" name="lname"
+                                onkeydown="return alphaOnly(event);" />
                             <i class="bx bx-user"></i>
                         </div>
                     </div>
@@ -90,22 +91,22 @@
                             <i class="bx bx-envelope"></i>
                         </div>
                         <div class="input-box">
-                            <input type="tel" minlength="10" maxlength="10" name="contact" class="form-control" placeholder="Your Phone *" />
+                            <input type="tel" minlength="10" maxlength="10" name="contact" class="form-control"
+                                placeholder="Your Phone *" />
                             <i class='bx bx-dots-horizontal-rounded'></i>
                         </div>
                     </div>
                     <div class="two-forms">
                         <div class="input-box">
-                            <input type="password" class="form-control" placeholder="Password *" id="password" name="password" onkeyup='check();'/>
+                            <input type="password" class="form-control" placeholder="Password *" id="password"
+                                name="password" onkeyup='check();' />
                             <i class="bx bx-lock-alt"></i>
                         </div>
                         <div class="input-box">
-                            <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password *" name="cpassword" onkeyup='check();'/><span id='message'></span>
+                            <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password *"
+                                name="cpassword" onkeyup='check();' /><span id='message'></span>
                             <i class="bx bx-lock-alt"></i>
                         </div>
-                    </div>
-                    <div class="input-box">
-                        <input type="submit" class="btnRegister" name="patsub1" onclick="return checklen() && validateForm();" value="Register" />
                     </div>
                     <div class="two-col">
                         <div class="one">
@@ -119,6 +120,19 @@
                             </label>
                         </div>
                     </div>
+                    <br>
+                    <div class="input-box">
+                        <input type="submit" class="btnRegister" name="patsub1"
+                            onclick="return checklen() && validateForm();" value="Register" />
+                    </div><br>
+                    <div class="input-box">
+                        <button  class="btnRegister" onclick="showForm('login'); window.location.href='patient-login.php';">Login as
+                            patient</button>
+                    </div>
+
+
+
+
                 </form>
             </div>
 
@@ -134,7 +148,7 @@
                             <i class="bx bx-user"></i>
                         </div>
                         <div class="input-box">
-                            <input type="password" class="form-control" placeholder="Password *" name="password3"/>
+                            <input type="password" class="form-control" placeholder="Password *" name="password3" />
                             <i class="bx bx-lock-alt"></i>
                         </div>
                     </div>
@@ -152,11 +166,11 @@
                 <form action="function3.php" method="POST" onsubmit="return validateAdminForm();">
                     <div class="two-forms">
                         <div class="input-box">
-                            <input type="text" class="form-control" placeholder="User Name *" name="username1"/>
+                            <input type="text" class="form-control" placeholder="User Name *" name="username1" />
                             <i class="bx bx-user"></i>
                         </div>
                         <div class="input-box">
-                            <input type="password" class="form-control" placeholder="Password *" name="password2"/>
+                            <input type="password" class="form-control" placeholder="Password *" name="password2" />
                             <i class="bx bx-lock-alt"></i>
                         </div>
                     </div>

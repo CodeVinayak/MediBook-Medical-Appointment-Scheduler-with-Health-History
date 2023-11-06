@@ -53,8 +53,8 @@ if (isset($_POST['patsub1'])) {
                 $_SESSION['pid'] = $row['pid'];
             }
 
-            // header("Location: index1.php");
-            echo" <script>alert('Patient registred successfully');window.location.href = 'index1.php';</script>";
+            // header("Location: patient-login");
+            echo" <script>alert('Patient registred successfully');window.location.href = 'patient-login';</script>";
             exit();
         } else {
             echo "Error: " . $query . "<br>" . mysqli_error($con);
