@@ -35,6 +35,7 @@ if (isset($_POST['app-submit'])) {
   $apptime1 = strtotime($apptime);
   $appdate1 = strtotime($appdate);
 
+
   // Calculate the date one month from now
   $oneMonthFromNow = date("Y-m-d", strtotime("+1 month"));
 
@@ -104,10 +105,10 @@ if (isset($_POST['submit'])) {
 // Function to check if the appointment is prescribed
 function isAccepted($id)
 {
-    global $con;
-    $query = "SELECT * FROM appointment WHERE AppID = '$id' AND doctorStatus=0";
-    $result = mysqli_query($con, $query);
-    return mysqli_num_rows($result) > 0;
+  global $con;
+  $query = "SELECT * FROM appointment WHERE AppID = '$id' AND doctorStatus=0";
+  $result = mysqli_query($con, $query);
+  return mysqli_num_rows($result) > 0;
 }
 
 // Function to check if the appointment is cancelled
@@ -192,7 +193,7 @@ function isCancelled($id)
       <li>
         <a href="#list-change-password" id="list-pres-list" role="tab" data-toggle="list" aria-controls="home">
           <i class='bx bx-detail'></i>
-          
+
           <span class="links_name">Change Password</span>
         </a>
       </li>
@@ -210,7 +211,9 @@ function isCancelled($id)
     <nav>
       <div class="welcome">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="admin"><?php echo $username ?></span>
+        <span class="admin">
+          <?php echo $username ?>
+        </span>
       </div>
     </nav>
     <!-- Default contents and dashboard contents -->
@@ -280,7 +283,7 @@ function isCancelled($id)
             </select>
           </div>
           <script>
-            document.getElementById('spec').onchange = function() {
+            document.getElementById('spec').onchange = function () {
               let spec = this.value;
               let docs = [...document.getElementById('doctor').options];
 
@@ -296,7 +299,7 @@ function isCancelled($id)
               document.getElementById('docFees').value = '';
             };
 
-            document.getElementById('doctor').onchange = function() {
+            document.getElementById('doctor').onchange = function () {
               var selection = document.querySelector(`[value="${this.value}"]`).getAttribute('data-value');
               document.getElementById('docFees').value = selection;
             };
@@ -346,9 +349,9 @@ function isCancelled($id)
             </select>
           </div><br>
           <center>
-          <div class="btn">
-            <input type="submit" name="app-submit" value="Create new entry" class="btn btn-primary" id="inputbtn">
-          </div>
+            <div class="btn">
+              <input type="submit" name="app-submit" value="Create new entry" class="btn btn-primary" id="inputbtn">
+            </div>
           </center>
         </form>
       </div>
@@ -386,12 +389,20 @@ function isCancelled($id)
               // Check if appointment is prescribed or cancelled
               $accepted = isAccepted($AppID);
               $cancelled = isCancelled($AppID);
-            ?>
+              ?>
               <tr>
-                <th scope="row"><?php echo $doctor; ?></th>
-                <td><?php echo $docFees; ?></td>
-                <td><?php echo $appdate; ?></td>
-                <td><?php echo $apptime; ?></td>
+                <th scope="row">
+                  <?php echo $doctor; ?>
+                </th>
+                <td>
+                  <?php echo $docFees; ?>
+                </td>
+                <td>
+                  <?php echo $appdate; ?>
+                </td>
+                <td>
+                  <?php echo $apptime; ?>
+                </td>
                 <td>
                   <?php
                   if ($cancelled) {
@@ -405,13 +416,15 @@ function isCancelled($id)
                 </td>
                 <td>
                   <?php if (!$cancelled && !$accepted) { ?>
-                    <a href="doctor-panel.php?AppID=<?php echo $row['AppID'] ?>&cancel=update" onClick="return confirm('Are you sure you want to cancel this appointment?')" title="Cancel Appointment">
+                    <a href="doctor-panel.php?AppID=<?php echo $row['AppID'] ?>&cancel=update"
+                      onClick="return confirm('Are you sure you want to cancel this appointment?')"
+                      title="Cancel Appointment">
                       <button class="btn btn-primary">Cancel</button>
                     </a>
                   <?php } ?>
                 </td>
               </tr>
-            <?php
+              <?php
             }
             ?>
           </tbody>
@@ -452,15 +465,29 @@ function isCancelled($id)
 
 
             while ($row = mysqli_fetch_array($result)) {
-            ?>
+              ?>
               <tr>
-                <td><?php echo $row['doctor']; ?></td>
-                <td><?php echo $row['AppID']; ?></td>
-                <td><?php echo $row['appdate']; ?></td>
-                <td><?php echo $row['apptime']; ?></td>
-                <td><?php echo $row['disease']; ?></td>
-                <td><?php echo $row['allergy']; ?></td>
-                <td><?php echo $row['prescription']; ?></td>
+                <td>
+                  <?php echo $row['doctor']; ?>
+                </td>
+                <td>
+                  <?php echo $row['AppID']; ?>
+                </td>
+                <td>
+                  <?php echo $row['appdate']; ?>
+                </td>
+                <td>
+                  <?php echo $row['apptime']; ?>
+                </td>
+                <td>
+                  <?php echo $row['disease']; ?>
+                </td>
+                <td>
+                  <?php echo $row['allergy']; ?>
+                </td>
+                <td>
+                  <?php echo $row['prescription']; ?>
+                </td>
                 </form>
 
 
@@ -475,8 +502,10 @@ function isCancelled($id)
     <!-- Change Password section -->
     <div class="home-content" id="list-change-password">
       <div class="change-password-form">
-        
-        <center><h4>Change Password</h4></center>
+
+        <center>
+          <h4>Change Password</h4>
+        </center>
         <form class="form-group" method="post" action="patient-panel.php">
           <div>
             <label for="email">Email:</label>
@@ -498,7 +527,7 @@ function isCancelled($id)
     </div>
   </div>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       const sidebarBtn = document.querySelector(".sidebarBtn");
       const sidebar = document.querySelector(".sidebar");
       const sections = document.querySelector("#sections");
@@ -510,14 +539,14 @@ function isCancelled($id)
       document.querySelector(".nav-links li a[href='#list-dash']").classList.add("active");
 
       // Hide other sections when the page loads
-      document.querySelectorAll(".home-content").forEach(function(section) {
+      document.querySelectorAll(".home-content").forEach(function (section) {
         if (section.id !== "list-dash") {
           section.style.display = "none";
         }
       });
 
       // Toggle sidebar
-      sidebarBtn.onclick = function() {
+      sidebarBtn.onclick = function () {
         sidebar.classList.toggle("active");
         if (sidebar.classList.contains("active")) {
           sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
@@ -527,11 +556,11 @@ function isCancelled($id)
       };
 
       // Handle click events for navigation links
-      links.forEach(function(link) {
-        link.addEventListener("click", function(event) {
+      links.forEach(function (link) {
+        link.addEventListener("click", function (event) {
           event.preventDefault();
           const targetSection = document.querySelector(this.getAttribute("href"));
-          sections.querySelectorAll(".home-content").forEach(function(section) {
+          sections.querySelectorAll(".home-content").forEach(function (section) {
             section.style.display = "none";
           });
           targetSection.style.display = "block";

@@ -5,12 +5,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-
+  <link rel="stylesheet" href="style5.css">
   <link rel="stylesheet" type="text/css" href="style5.css">
+  <script>
+    function myMenuFunction() {
+      var i = document.getElementById("navMenu");
+
+      if (i.className === "nav-menu") {
+        i.className += " responsive";
+      } else {
+        i.className = "nav-menu";
+      }
+    }
+
+    function showForm(formId) {
+      var forms = document.getElementsByClassName("register-container");
+      for (var i = 0; i < forms.length; i++) {
+        forms[i].style.display = "none";
+      }
+
+      var form = document.getElementById(formId);
+      form.style.display = "block";
+    }
+  </script>
 </head>
 
 <body>
+
   <div class="wrapper">
     <nav class="nav">
       <div class="nav-logo">
@@ -20,9 +43,18 @@
       <div class="nav-menu" id="navMenu">
         <ul>
           <li><a href="index.php" class="link">Home</a></li>
-          <!-- <li><a href="services.html" class="link">About US</a></li>
-          <li><a href="contact.html" class="link">Contact</a></li> -->
+          <li><a href="patient-login.php" class="link">Patient Login</a></li>
+          <li class="link" onclick="location.href='index.php/loginDoctor';" style="color:white; cursor: pointer;">Doctor Login</li><br>
+          <li class="link" onclick="showForm('loginAdmin')" style="color:white">&nbsp;&nbsp;&nbsp;&nbsp;Admin Login</li>
         </ul>
+      </div>
+      <div class="nav-button">
+        <button class="btn white-btn" id="loginBtn" onclick="showForm('loginPatient')">Patient</button>
+        <button class="btn white-btn" id="registerBtn" onclick="showForm('loginDoctor')">Doctor</button>
+        <button class="btn white-btn    " id="adminBtn" onclick="showForm('loginAdmin')">Admin</button>
+      </div>
+      <div class="nav-menu-btn">
+        <i class="bx bx-menu" onclick="myMenuFunction()"></i>
       </div>
     </nav>
     <div class="form-box">

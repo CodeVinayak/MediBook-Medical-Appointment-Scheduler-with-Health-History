@@ -41,6 +41,7 @@
             return true;
         }
     </script>
+
 </head>
 
 <body>
@@ -53,8 +54,10 @@
             <div class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="index.php" class="link">Home</a></li>
-                    <!-- <li><a href="services.html" class="link">About US</a></li>
-                    <li><a href="contact.html" class="link">Contact</a></li> -->
+                    <li><a href="patient-login.php" class="link">Patient Login</a></li>
+                    <li class="link" onclick="showForm('index.php/loginDoctor')" style="color:white">Doctor Login</li><br>
+                    <li class="link" onclick="showForm('loginAdmin')" style="color:white">&nbsp;&nbsp;&nbsp;&nbsp;Admin
+                        Login</li>
                 </ul>
             </div>
             <div class="nav-button">
