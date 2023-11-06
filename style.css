@@ -20,7 +20,7 @@
   width: 60px;
 }
 .sidebar .logo-details{
-  height: 80px;
+  height: 150px;
   display: flex;
   align-items: center;
 }
@@ -131,8 +131,9 @@ nav .sidebar-button i{
   margin-right: 10px;
 }
 .section-container .home-content{
+  padding: 20px;
   position: relative;
-  padding-top: 104px;
+  padding-top: 110px;
 }
 .home-content .overview-boxes{
   display: flex;

@@ -192,11 +192,12 @@ function isCancelled($id)
       <li>
         <a href="#list-change-password" id="list-pres-list" role="tab" data-toggle="list" aria-controls="home">
           <i class='bx bx-detail'></i>
+          
           <span class="links_name">Change Password</span>
         </a>
       </li>
       <li class="log_out">
-        <a href="logout1.php" onclick="logout()">
+        <a href="patient-logout.php" onclick="logout()">
           <i class='bx bx-log-out'></i>
           <span class="links_name">Log out</span>
         </a>
@@ -330,8 +331,7 @@ function isCancelled($id)
           </div>
           <div class="apdate">
             <input type="date" class="form-control datepicker" name="appdate">
-          </div><br><br>
-
+          </div>
           <div>
             <label>Appointment Time</label>
           </div>
@@ -344,10 +344,12 @@ function isCancelled($id)
               <option value="14:00:00">2:00 PM</option>
               <option value="16:00:00">4:00 PM</option>
             </select>
-          </div>
+          </div><br>
+          <center>
           <div class="btn">
             <input type="submit" name="app-submit" value="Create new entry" class="btn btn-primary" id="inputbtn">
           </div>
+          </center>
         </form>
       </div>
     </div>
@@ -473,7 +475,8 @@ function isCancelled($id)
     <!-- Change Password section -->
     <div class="home-content" id="list-change-password">
       <div class="change-password-form">
-        <h4>Change Password</h4>
+        
+        <center><h4>Change Password</h4></center>
         <form class="form-group" method="post" action="patient-panel.php">
           <div>
             <label for="email">Email:</label>
@@ -486,7 +489,7 @@ function isCancelled($id)
           </div>
           <div>
             <input type="password" name="password" class="form-control" required>
-          </div>
+          </div><br>
           <div class="btn">
             <input type="submit" name="submit" value="Change Password" class="btn btn-primary">
           </div>
@@ -540,7 +543,7 @@ function isCancelled($id)
     // logout button code
     function logout() {
       event.preventDefault();
-      window.location.href = "logout1.php"; // Redirect to logout1.php
+      window.location.href = "patient-logout.php"; // Redirect to patient-logout.php
     }
     // default page contents js
     function clickDiv(id) {

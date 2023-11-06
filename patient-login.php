@@ -21,7 +21,7 @@
         <ul>
           <li><a href="index.php" class="link">Home</a></li>
           <!-- <li><a href="services.html" class="link">About US</a></li>
-                    <li><a href="contact.html" class="link">Contact</a></li> -->
+          <li><a href="contact.html" class="link">Contact</a></li> -->
         </ul>
       </div>
     </nav>

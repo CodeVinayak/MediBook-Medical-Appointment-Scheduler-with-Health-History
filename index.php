@@ -60,7 +60,7 @@
             <div class="nav-button">
                 <button class="btn white-btn" id="loginBtn" onclick="showForm('loginPatient')">Patient</button>
                 <button class="btn white-btn" id="registerBtn" onclick="showForm('loginDoctor')">Doctor</button>
-                <button class="btn white-btn    " id="adminBtn" onclick="showForm('loginAdmin')">Admin</button>
+                <button class="btn white-btn" id="adminBtn" onclick="showForm('loginAdmin')">Admin</button>
             </div>
             <div class="nav-menu-btn">
                 <i class="bx bx-menu" onclick="myMenuFunction()"></i>

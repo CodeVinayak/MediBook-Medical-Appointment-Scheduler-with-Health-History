@@ -209,7 +209,7 @@ mysqli_close($con);
         </a>
       </li>
       <li class="log_out">
-        <a href="logout1.php" onclick="logout()">
+        <a href="patient-logout.php" onclick="logout()">
           <i class='bx bx-log-out'></i>
           <span class="links_name">Log out</span>
         </a>
@@ -662,7 +662,7 @@ mysqli_close($con);
     // logout button code
     function logout() {
       event.preventDefault();
-      window.location.href = "logout1.php"; // Redirect to logout1.php
+      window.location.href = "patient-logout.php"; // Redirect to patient-logout.php
     }
     // default page contents js
     function clickDiv(id) {
