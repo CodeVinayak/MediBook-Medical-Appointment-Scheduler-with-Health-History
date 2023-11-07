@@ -19,17 +19,21 @@
         i.className = "nav-menu";
       }
     }
+    function redirectToPatientLogin() {
+      window.location.replace("index.php");
+    }
+    function redirectToDoctorLogin() {
+      window.location.replace("doctor-login.php");
+    }
+    function redirectToAdminLogin() {
+      window.location.replace("admin-login.php");
+    }
 
     function showForm(formId) {
       var forms = document.getElementsByClassName("register-container");
-      for (var i = 0; i < forms.length; i++) {
-        forms[i].style.display = "none";
-      }
-
-      var form = document.getElementById(formId);
+      for (var i = 0; i < forms.length; i++) { forms[i].style.display = "none"; } var form = document.getElementById(formId);
       form.style.display = "block";
-    }
-  </script>
+    } </script>
 </head>
 
 <body>
@@ -42,16 +46,15 @@
       </div>
       <div class="nav-menu" id="navMenu">
         <ul>
-          <li><a href="index.php" class="link">Home</a></li>
-          <li><a href="patient-login.php" class="link">Patient Login</a></li>
-          <li class="link" onclick="location.href='index.php/loginDoctor';" style="color:white; cursor: pointer;">Doctor Login</li><br>
-          <li class="link" onclick="showForm('loginAdmin')" style="color:white">&nbsp;&nbsp;&nbsp;&nbsp;Admin Login</li>
+          <li><a href="patient-login.php" class="mobile-only">Patient</a></li>
+          <li><a href="doctor-login.php" class="mobile-only">Doctor</a></li>
+          <li><a href="admin-login.php" class="mobile-only">Admin</a></li>
         </ul>
       </div>
       <div class="nav-button">
-        <button class="btn white-btn" id="loginBtn" onclick="showForm('loginPatient')">Patient</button>
-        <button class="btn white-btn" id="registerBtn" onclick="showForm('loginDoctor')">Doctor</button>
-        <button class="btn white-btn    " id="adminBtn" onclick="showForm('loginAdmin')">Admin</button>
+        <button class="btn white-btn" id="registerBtn" onclick="redirectToPatientLogin()">Patient</button>
+        <button class="btn white-btn" id="registerBtn" onclick="redirectToDoctorLogin()">Doctor</button>
+        <button class="btn white-btn" id="registerBtn" onclick="redirectToAdminLogin()">Admin</button>
       </div>
       <div class="nav-menu-btn">
         <i class="bx bx-menu" onclick="myMenuFunction()"></i>
@@ -74,12 +77,8 @@
           <div class="input-box">
             <input type="submit" id="inputbtn" name="patsub" value="Login" class="btnRegister">
           </div><br>
-          <div class="input-box">
             <button type="button" class="btnlogin"><a href="index.php">Back</a></button>
           </div>
-          <!-- <div class="input-box">
-            <button class="btnlogin" onclick="window.location.href='index.php';">Back</button>
-          </div> -->
         </form>
 
       </div>

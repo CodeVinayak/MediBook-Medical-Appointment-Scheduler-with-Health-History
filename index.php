@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +22,18 @@
             var key = event.keyCode;
             return ((key >= 65 && key <= 90) || key == 8 || key == 32);
         };
+        function redirectToPatientLogin() {
+            window.location.replace("index.php");     
+            return false;       
+        }
+        function redirectToDoctorLogin() {
+            window.location.replace("doctor-login.php");
+            return false;
+        }
+        function redirectToAdminLogin() {
+            window.location.replace("admin-login.php");
+            return false;
+        }
         window.onload = function () {
             var formSubmitted = localStorage.getItem('formSubmitted');
             if (formSubmitted === 'true') {
@@ -52,18 +63,17 @@
                     <span>Hospital Appointment Booking</span>
             </div>
             <div class="nav-menu" id="navMenu">
-                <ul>
-                    <li><a href="index.php" class="link">Home</a></li>
-                    <li><a href="patient-login.php" class="link">Patient Login</a></li>
-                    <li class="link" onclick="showForm('index.php/loginDoctor')" style="color:white">Doctor Login</li><br>
-                    <li class="link" onclick="showForm('loginAdmin')" style="color:white">&nbsp;&nbsp;&nbsp;&nbsp;Admin
-                        Login</li>
-                </ul>
+           <ul>
+                <li><a href="index.php" class="mobile-only">Patient</a></li>
+                <li><a href="doctor-login.php" class="mobile-only">Doctor</a></li>
+                <li><a href="admin-login.php" class="mobile-only">Admin</a></li>
+            </ul>
             </div>
+
             <div class="nav-button">
-                <button class="btn white-btn" id="loginBtn" onclick="showForm('loginPatient')">Patient</button>
-                <button class="btn white-btn" id="registerBtn" onclick="showForm('loginDoctor')">Doctor</button>
-                <button class="btn white-btn    " id="adminBtn" onclick="showForm('loginAdmin')">Admin</button>
+                <button class="btn white-btn" id="registerBtn" onclick="redirectToPatientLogin()">Patient</button>
+                <button class="btn white-btn" id="registerBtn" onclick="redirectToDoctorLogin()">Doctor</button>
+                <button class="btn white-btn" id="registerBtn" onclick="redirectToAdminLogin()">Admin</button>
             </div>
             <div class="nav-menu-btn">
                 <i class="bx bx-menu" onclick="myMenuFunction()"></i>
@@ -81,35 +91,35 @@
                         <div class="input-box">
                             <input type="text" class="form-control" placeholder="First Name *" name="fname"
                                 onkeydown="return alphaOnly(event);" />
-                            <i class="bx bx-user"></i>
+                            <i class="bx bx-user"></i><br><br>
                         </div>
                         <div class="input-box">
                             <input type="text" class="form-control" placeholder="Lastname *" name="lname"
                                 onkeydown="return alphaOnly(event);" />
-                            <i class="bx bx-user"></i>
+                            <i class="bx bx-user"></i><br><br>
                         </div>
                     </div>
                     <div class="two-forms">
                         <div class="input-box">
                             <input type="email" class="form-control" placeholder="Your Email *" name="email" />
-                            <i class="bx bx-envelope"></i>
+                            <i class="bx bx-envelope"></i><br><br>
                         </div>
                         <div class="input-box">
                             <input type="tel" minlength="10" maxlength="10" name="contact" class="form-control"
                                 placeholder="Your Phone *" />
-                            <i class='bx bx-dots-horizontal-rounded'></i>
+                            <i class='bx bx-dots-horizontal-rounded'></i><br><br>
                         </div>
                     </div>
                     <div class="two-forms">
                         <div class="input-box">
                             <input type="password" class="form-control" placeholder="Password *" id="password"
                                 name="password" onkeyup='check();' />
-                            <i class="bx bx-lock-alt"></i>
+                            <i class="bx bx-lock-alt"></i><br><br>
                         </div>
                         <div class="input-box">
                             <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password *"
                                 name="cpassword" onkeyup='check();' /><span id='message'></span>
-                            <i class="bx bx-lock-alt"></i>
+                            <i class="bx bx-lock-alt"></i><br><br>
                         </div>
                     </div>
                     <div class="two-col">
@@ -146,7 +156,7 @@
                     <div class="two-forms">
                         <div class="input-box">
                             <input type="text" class="form-control" placeholder="User Name *" name="username3" />
-                            <i class="bx bx-user"></i>
+                            <i class="bx bx-user"></i><br><br>
                         </div>
                         <div class="input-box">
                             <input type="password" class="form-control" placeholder="Password *" name="password3" />
@@ -168,11 +178,11 @@
                     <div class="two-forms">
                         <div class="input-box">
                             <input type="text" class="form-control" placeholder="User Name *" name="username1" />
-                            <i class="bx bx-user"></i>
+                            <i class="bx bx-user"></i><br><br>
                         </div>
                         <div class="input-box">
                             <input type="password" class="form-control" placeholder="Password *" name="password2" />
-                            <i class="bx bx-lock-alt"></i>
+                            <i class="bx bx-lock-alt"></i><br><br>
                         </div>
                     </div>
                     <div>

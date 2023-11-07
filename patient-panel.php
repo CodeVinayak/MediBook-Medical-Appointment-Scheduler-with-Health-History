@@ -212,7 +212,10 @@ function isCancelled($id)
       <div class="welcome">
         <i class='bx bx-menu sidebarBtn'></i>
         <span class="admin">
-          <?php echo $username ?>
+          <?php
+          $greeting = "Welcome, " . $username;
+          echo $greeting;
+          ?>
         </span>
       </div>
     </nav>

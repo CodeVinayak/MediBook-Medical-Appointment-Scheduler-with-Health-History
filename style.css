@@ -126,6 +126,11 @@
   font-size: 24px;
   font-weight: 600;
 }
+@media screen and (max-width: 768px) {
+  .section-container nav .welcome {
+    font-size: 22px; /* Font size for mobile devices */
+  }
+}
 nav .sidebar-button i{
   font-size: 35px;
   margin-right: 10px;
