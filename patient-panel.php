@@ -163,7 +163,7 @@ function isCancelled($id)
   <div class="sidebar">
     <div class="logo-details">
       <i class='bx bx-plus-medical'></i>
-      <span class="logo_name"><a href="#"> Hospital Appointment Booking</a></span>
+      <span class="logo_name"><a href="#"> MediBook: Appointment Schedule</a></span>
     </div>
     <ul class="nav-links">
       <li>

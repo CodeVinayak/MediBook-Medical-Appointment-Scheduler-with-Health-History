@@ -96,7 +96,7 @@ if (isset($_GET['prescribe'])) {
             <i class='bx bx-plus-medical'></i>
             <span class="logo_name">
                 <a href="#">
-                    Hospital Appointment Booking</a>
+                    MediBook: Appointment Schedule</a>
             </span>
         </div>
         <ul class="nav-links">
