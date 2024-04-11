@@ -60,7 +60,7 @@
         <nav class="nav">
             <div class="nav-logo">
                 <a href="index.php"><img src="logo.png" alt="">
-                    <span>Hospital Appointment Booking</span>
+                    <span>MediBook: Appointment Scheduler</span>
             </div>
             <div class="nav-menu" id="navMenu">
            <ul>
