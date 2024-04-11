@@ -35,6 +35,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     overflow: hidden;
+    overflow-y: auto; 
 }
 
 .wrapper {
@@ -65,19 +66,16 @@ body {
     list-style-type: none;
 }
 
-/* CSS for mobile devices (up to 768px) */
 @media screen and (max-width: 768px) {
     .mobile-only {
         display: block;
-        /* Show the elements on mobile devices */
     }
 }
 
-/* CSS for desktop and laptop devices (above 768px) */
+
 @media screen and (min-width: 769px) {
     .mobile-only {
         display: none;
-        /* Hide the elements on larger screens */
     }
 }
 
@@ -128,31 +126,6 @@ body {
     display: none;
 }
 
-/* .form-box {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 512px;
-    height: 420px;
-    overflow: hidden;
-    z-index: 2;
-    width: 100%;
-    padding: 40px;
-    background: transparent;
-}
-
-.register-container {
-    position: absolute;
-    left: 4px;
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    transition: .5s ease-in-out;
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 5px;
-} */
 .top span {
     color: #fff;
     font-size: small;
@@ -317,12 +290,16 @@ header {
 @media only screen and (max-width: 540px) {
     .wrapper {
         min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .form-box {
         width: 100%;
-        padding-top: 50px;
-
+        padding-top: 70px;
+        flex-grow: 1;
 
     }
 
