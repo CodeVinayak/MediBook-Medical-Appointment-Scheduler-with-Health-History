@@ -207,7 +207,7 @@ header {
     background: rgba(255, 255, 255, 0.7);
     cursor: pointer;
     transition: .3s ease-in-out;
-
+    margin-bottom: 50px;
 }
 
 .btnRegister:hover {
