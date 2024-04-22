@@ -54,7 +54,7 @@ if (isset($_POST['patsub1'])) {
             }
 
             // header("Location: patient-login");
-            echo" <script>alert('Patient registred successfully');window.location.href = 'patient-login';</script>";
+            echo" <script>alert('Patient registred successfully');window.location.href = 'patient-login.php';</script>";
             exit();
         } else {
             echo "Error: " . $query . "<br>" . mysqli_error($con);
