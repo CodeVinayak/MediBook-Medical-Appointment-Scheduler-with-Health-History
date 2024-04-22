@@ -8,7 +8,7 @@ if (isset($_POST['patsub'])) {
 
     if (empty($email) || empty($password)) {
         echo "<script>alert('Enter username and password first.');
-              window.location.href = 'patient-login';</script>";
+              window.location.href = 'patient-login.php';</script>";
     } else {
         $query = "select * from patient where email='$email' and password='$password';";
         $result = mysqli_query($con, $query);
